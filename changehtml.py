@@ -5,7 +5,7 @@ import fileinput
 
 def list_files(directory):
     """
-List html files in 'directory' for which is_black() is true.
+List html files in 'directory'.
 """
     result = []
     for dirpath, dirnames, filenames in os.walk(directory):
@@ -21,7 +21,7 @@ List html files in 'directory' for which is_black() is true.
 
 def replace_avi_for_flv_in_files(files):
     """
-Decrypt a list of files, after confirming with the user.
+Looks inside each file and replaces strings according to the dict
 """
     for eachfile in files:
         print("replacing avi for flv in "+eachfile);
@@ -31,9 +31,6 @@ Decrypt a list of files, after confirming with the user.
 		line = replacements(d,line)
 		bytes.write(line)
 	bytes.close()
-        
-def testifavi(astring):
-	print astring
 	
 def replacements(adict, astring):
 	pat = '|'.join(re.escape(s) for s in adict)
