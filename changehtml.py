@@ -43,6 +43,6 @@ def replacements(adict, astring):
 	
 if __name__ == '__main__':
     directory = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else '.')
-    d = {'avi':'flv','IMG':'EMBED'}
+    d = {'avi':'flv','IMG':'EMBED',"200":"320","150":"240"}
 print("Changing avi text to flv in files in {0}".format(directory))
 replace_avi_for_flv_in_files(list_files(directory))
