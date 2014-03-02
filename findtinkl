@@ -1,0 +1,20 @@
+import os,sys
+#lets list all the tinkrbook.csv                                                    
+sourcepath="/data/data/"
+filename = "tinkrbook.csv"
+
+
+
+
+def findtinkl():
+    for relpath, subdirs, files in os.walk(sourcepath):
+        if filename in files:
+            full_path = os.path.join(sourcepath,relpath,filename)
+            print(os.path.normpath(os.path.abspath(full_path)))
+            with open('csvlist.txt', 'at') as csvlist:
+                csvlist.write(os.path.normpath(os.path.abspath(full_path))+'\n')
+
+if __name__ == '__main__':
+    findtinkl()
+
+
