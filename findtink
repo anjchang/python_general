@@ -1,0 +1,19 @@
+import os,sys
+#lets list all the tinkrbook.csv                                                    
+sourcepath="/data/data/"
+filename = "tinkrbook.csv"
+
+
+def findtinkr():
+    for relpath, subdirs, files in os.walk(sourcepath):
+        if filename in files:
+            full_path = os.path.join(sourcepath,relpath,filename)
+            print(os.path.normpath(os.path.abspath(full_path)))
+
+if __name__ == '__main__':
+    findtinkr()
+
+
+
+
+
